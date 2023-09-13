@@ -75,7 +75,6 @@ fn toggle_mute() {
                 .unwrap()
                 .parse()
                 .unwrap_or(1);
-        dbg!(prev_vol);
         set_volume(prev_vol);
     }
     amixer.args([""]);
