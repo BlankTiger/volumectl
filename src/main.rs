@@ -96,11 +96,13 @@ fn main() {
         }
     }
 
-    if let Some(inc) = matches.get_one::<u8>("inc") {
-        increase_volume(*inc);
+    if let Some(inc) = matches.get_one::<String>("inc") {
+        let inc: u8 = inc.parse().unwrap();
+        increase_volume(inc);
     }
 
-    if let Some(dec) = matches.get_one::<u8>("dec") {
-        decrease_volume(*dec);
+    if let Some(dec) = matches.get_one::<String>("dec") {
+        let dec: u8 = dec.parse().unwrap();
+        decrease_volume(dec);
     }
 }
